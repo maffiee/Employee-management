@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <body class="bg-color">
 
   <!-- style -->
@@ -31,7 +32,11 @@
 
 <div class="container">
   <h4 class="t-title">Employee-list</h4>
-  <div class="container">
+  <div class="container"><br>
+    <p class="td-text" style="font-size: 16px;">Type something in the input field to search the table for name or position:</p>  
+    <input class="form-control" id="myInput" type="text" placeholder="Search..">
+    <small id="emailHelp" class="form-text text-muted" style="font-family: Ubuntu mono; font-weight: 400; font-size: 15px;">Note: Filter operation not implemented yet.</small>
+    <br>
     <table class="mx-auto p-2 table th-text">
       <thead>
         <tr>
@@ -41,7 +46,7 @@
           <th>Actions</th>
         </tr>
       </thead>
-      <tbody class="td-text">
+      <tbody class="td-text" id="myTable">
         <!-- Loop through employees and display table rows -->
         <tr *ngFor="let employee of employees">
           <td>{{ employee.id }}</td>
@@ -55,8 +60,10 @@
         </tr>
       </tbody>
     </table>
+    <small id="emailHelp" class="form-text text-muted" style="font-family: Ubuntu mono; font-weight: 400; font-size: 15px;">Note: Update Operation not implemented yet.</small>
   </div>
 </div>
+
 
   <!--*************************************************Employee list Section*************************************************************-->
 <br>
@@ -71,7 +78,7 @@
         <div class="form-group">
           <label for="employeeId">ID:</label>
           <input type="number" id="employeeId" class="form-control" name="employeeId" [(ngModel)]="newEmployee.id" disabled >
-          <small id="emailHelp" class="form-text text-muted" style="font-family: Ubuntu mono; font-weight: 400; font-size: 15px;">ID is un-editable because it's automatically asigned to a new employee.</small>
+          <small id="emailHelp" class="form-text text-muted" style="font-family: Ubuntu mono; font-weight: 400; font-size: 15px;">Note: ID is un-editable because it's automatically asigned to a new employee.</small>
         </div>
         
         <div class="form-group">
@@ -121,5 +128,6 @@
         <small>Copyright &copy; EMPLOYEE MANAGEMENT SYSTEM. Designed by Victory Chollom.</small>
       </div>
     </footer>
+
 </body>
 
