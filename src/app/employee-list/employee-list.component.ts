@@ -10,8 +10,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class EmployeeListComponent {
   employees = [
-    { id: 1, name: 'John Doe', position: 'Manager' },
-    { id: 2, name: 'Jane Smith', position: 'Developer' },
+    { id: 1, name: 'Victory Chollom', position: 'CEO / Developer' },
+    { id: 2, name: 'Nanbyen Pontip', position: 'Developer' },
     // Add more employee objects as needed
   ];
 
