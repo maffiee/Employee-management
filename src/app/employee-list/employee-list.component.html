@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<body class="bg-color">
+
+  <!-- style -->
+  <style>
+    .bg-color{
+      background-color: #f3f3f3;
+    }
+    .th-text{
+      font-family: Ubuntu Condensed;
+      font-size: 20px;
+    }
+    .td-text{
+      font-family: ubuntu mono;
+      font-size: 18px;
+    }
+    .t-title{
+      text-align: center;
+      font-family: ubuntu;
+      font-size: x-large;
+    }
+    .button-text{
+      font-family: ubuntu mono;
+    }
+  </style>
+
+
+
+
+  <!--*************************************************Employee list Section*************************************************************-->
+
+<div class="container">
+  <h4 class="t-title">Employee-list</h4>
+  <div class="container">
+    <table class="mx-auto p-2 table th-text">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody class="td-text">
+        <!-- Loop through employees and display table rows -->
+        <tr *ngFor="let employee of employees">
+          <td>{{ employee.id }}</td>
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.position }}</td>
+          <td>
+            <!-- Actions for each employee, e.g., edit and delete buttons -->
+            <button class="btn btn-primary   mb-1 button-text" (click)="editEmployee(employee)">Edit</button>
+            <button class="btn btn-danger  mb-1 button-text" (click)="confirmDelete(employee)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+  <!--*************************************************Employee list Section*************************************************************-->
+<br>
+
+
+
+<!--*************************************************Create Operation Section*************************************************************-->
+<div class="container">
+  <h4 class="t-title">Add New Employee</h4>
+    <div class="container">
+      <form (ngSubmit)="addEmployee()" class=" th-text" style=" font-weight: 700;"> 
+        <div class="form-group">
+          <label for="employeeId">ID:</label>
+          <input type="number" id="employeeId" class="form-control" name="employeeId" [(ngModel)]="newEmployee.id" disabled >
+          <small id="emailHelp" class="form-text text-muted" style="font-family: Ubuntu mono; font-weight: 400; font-size: 15px;">ID is un-editable because it's automatically asigned to a new employee.</small>
+        </div>
+        
+        <div class="form-group">
+          <label for="employeeName">Name:</label>
+          <input type="text" id="employeeName" class="form-control" name="employeeName" [(ngModel)]="newEmployee.name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="employeePosition">Position:</label>
+          <input type="text" id="employeePosition" class="form-control" name="employeePosition" [(ngModel)]="newEmployee.position" required>
+        </div><br>
+
+        <button type="submit" class="btn btn-primary mx-auto p-2 button-text">Add Employee</button>
+      </form>
+    </div>
+</div>
+
+<!--***********************************************Create Operation Section (THE END)************************************************-->
+<br>
+
+<!-- ********************************************************Read Operation *********************************************************-->
+<div class="container"> 
+<h4 class="t-title">Employee-read</h4>
+  <div class="container">
+    <table class="table table-dark th-text">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Position</th>
+          </tr>
+        </thead>
+        <tbody class="td-text">
+          <tr *ngFor="let employee of employees">
+            <td>{{ employee.id }}</td>
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.position }}</td>
+          </tr>
+        </tbody>
+    </table>
+  </div>
+</div>
+
+    <!--************************************************** Read Operation (THE END) ***********************************************-->
+    <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
+      <div class="container text-center">
+        <small>Copyright &copy; EMPLOYEE MANAGEMENT SYSTEM. Designed by Victory Chollom.</small>
+      </div>
+    </footer>
+</body>
+
